@@ -1,0 +1,19 @@
+include ../common.pug
+
+html
+	head
+		title  #{title}
+		link(rel='stylesheet', href='/static/css/style.css')
+		script(src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js')
+		block header_scripts
+
+	body
+		#page
+			.main
+				block content
+
+		.footer 底部
+		block footer_scripts
+
+
+

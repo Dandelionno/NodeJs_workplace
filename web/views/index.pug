@@ -1,0 +1,80 @@
+extends layouts/main.pug
+
+block content
+	h1= message
+	div.content(
+		res='111'				
+	) 
+		| {{content}}
+		|是是是< #[strong strong] >赌对
+
+		//- 循环之for
+		ul
+		- for(var i=0; i<3; i++)
+			li.item #{i+1}项
+
+		//- 循环之each
+		each v,k in ['a','b','c']
+			p #{k} => #{v}
+
+		//- 循环之while
+		- var n = 1;
+		ul
+		while n<4
+			li= n++
+
+		//- 判断之switch
+		- var type = 'off';
+		case type
+			when 'on'
+				p '开启'
+			when 'off': p '关闭'
+			default
+				p '无状态'
+
+		//- 代码块输出
+		+ widget([{
+			text: '代码块'
+		}])
+			li 123
+
+		//- 使用vue
+		div(v-for='item in items')
+			p(v-show='item.show', :age='item.age') {{item.name}}
+
+	//这个会输出注释
+	//-这个不会输出注释
+
+	//- 定义变量
+	- var con = '文本321';
+
+//- 底部js
+block footer_scripts
+	script.
+		var app = new Vue({
+			el: '#page',
+			data: function(){
+				var data = {
+					content: '#{con}',
+					isShow: false,
+					items: [
+						{
+							'name': 'viden',
+							'age': 25,
+							'show': false,
+						},
+						{
+							'name': 'rachel',
+							'age': 28,
+							'show': true,
+						},
+					],
+				}
+				return data;
+			},
+			methods: {
+				alert: function(data){
+					alert(data)
+				}
+			},
+		})

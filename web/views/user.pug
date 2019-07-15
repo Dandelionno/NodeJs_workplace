@@ -1,0 +1,15 @@
+extends layouts/main.pug
+
+block content
+	form(action='http://127.0.0.1:8888/user/add', method='POST', enctype='multipart/form-data')
+		| First Name: 
+		input(type='text', name='first_name')
+		br
+		| Last Name: 
+		input(type='text', name='last_name')
+		br
+		input(type="file", name="image", size="50")
+		br
+		br
+		input(type="submit", value="Submit")
+

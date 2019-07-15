@@ -1,0 +1,9 @@
+
+mixin widget(list)
+	if block
+		//- 这个就类似于插槽了
+		block
+	else
+	ul
+	each v in list
+		li=  v.text
