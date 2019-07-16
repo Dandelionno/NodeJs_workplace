@@ -1,0 +1,567 @@
+#box{
+    width: 300px;
+    height: 200px;
+    border: 5px solid #999;
+    color: #00f;
+    background: url(/images/img_01.png);
+    background-size: 100% 100%;
+}
+
+
+
+[v-cloak] {
+    display: none;
+}
+
+body {
+    font-size: 14px;
+    margin: 0px;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+}
+
+form {
+    width: 100%;
+    height: 100%;
+}
+
+input[required]:invalid, input:focus:invalid, textarea[required]:invalid,
+textarea:focus:invalid {
+    box-shadow: none;
+}
+
+[class*=" el-icon-ext"], [class^=el-icon-ext] {
+    font-family: "el-icon-ext" !important;
+}
+
+.el-tabs__nav-next i, .el-tabs__nav-prev i {
+    line-height: unset !important;
+}
+
+.el-popover {
+    padding: 0px;
+}
+
+.input-append-img input {
+    padding-right: 72px;
+}
+
+.input-append-img img {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 72px;
+    height: 36px;
+}
+
+.el-form-item--small .el-form-item__error {
+    padding-top: 4px;
+}
+
+.el-textarea__inner {
+    height: 200px;
+}
+
+.el-tabs__item {
+    min-width: 76px;
+    text-align: center;
+}
+
+.select-tree .el-input input {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.editor-container {
+    padding: 10px;
+    padding-bottom: 0px;
+    max-width: 1700px;
+}
+
+.tree-cell i, .tree-node i {
+    font-size: 12px;
+    color: #c0c4cc;
+    margin-right: 6px;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-active {
+    opacity: 0;
+}
+
+.table-cell-img {
+    margin-right: 8px;
+    max-width: 70px;
+    vertical-align: middle;
+    border-radius: 3px;
+}
+
+.table-cell-tag {
+    margin-right: 6px;
+}
+
+.table-oper-cell {
+    height: 32px;
+    line-height: 32px;
+}
+
+.table-oper-cell i.empty {
+    font-size: 12px;
+    color: #c0c4cc;
+}
+
+.login-container {
+    background-color: #393D49;
+}
+
+.login-panel {
+    width: 450px;
+    margin: 11% auto;
+    height: 500px;
+}
+
+.login-container .login-header {
+    letter-spacing: 1px;
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #dcdfe6;
+}
+
+.login-panel .login-center {
+    width: 325px;
+    margin: auto;
+    margin-top: 22px;
+    text-align: center;
+}
+
+.login-panel .login-btn {
+    width: 100%;
+}
+
+.login-panel .login-footer {
+    color: #ababab;
+    margin-top: 22px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.login-panel .login-captcha-img {
+    cursor: pointer;
+}
+
+.index-container {
+    width: 100%;
+    height: 100vh;
+}
+
+.index-content {
+    height: -webkit-calc(100% - 60px);
+    height: -moz-calc(100% - 60px);
+    height: calc(100% - 60px);
+}
+
+.index-header {
+    background-color: #409EFF;
+    position: relative;
+    font-size: 16px;
+    color: #fff;
+}
+
+.index-footer {
+    background-color: #f2f2f2;
+    height: 48px !important;
+    text-align: center;
+    line-height: 48px;
+    color: #606266;
+}
+
+.index-aside-menu {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.index-main {
+    padding: 0px;
+    height: 100%;
+}
+
+.index-logo-container {
+    color: #fff;
+    height: 34px;
+    position: absolute;
+    padding: 13px 0px;
+}
+
+.index-logo-container .index-logo {
+    max-height: 100%;
+    float: left;
+    box-shadow: rgba(255, 255, 255, 0.7) 0px 0px 10px 0px;
+    border-radius: 30px;
+    margin-right: 15px;
+}
+
+.index-logo-container .index-web-name {
+    letter-spacing: 1px;
+    float: left;
+    line-height: 34px;
+}
+
+.index-header-nav-container {
+    height: 34px;
+    position: absolute;
+    padding: 13px 0px;
+    right: 20px;
+    line-height: 34px;
+    font-size: 14px;
+}
+
+.index-header-nav-container .index-header-nav-item {
+    float: left;
+    margin-left: 19px;
+}
+
+.index-header-nav-container .index-header-nav-item i,
+.index-header-nav-container .index-header-nav-item .el-button--small {
+    font-size: 14px;
+}
+
+.index-header-nav-container .index-header-nav-item:first-child {
+    margin-left: 0px;
+}
+
+.page-tab-container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.page-tab-container .page-tab {
+    height: 100%;
+}
+
+.page-tab-container .page-tab .el-tabs__item {
+    color: #909399;
+}
+
+.page-tab-container .page-tab .el-tabs__nav {
+    border-radius: 0px !important;
+    border-left: none !important;
+    border-top: 0px;
+}
+
+.page-tab-container .page-tab .el-tabs__header {
+    z-index: 100;
+    height: 40px;
+    padding-right: 100px;
+    margin: 0px;
+    box-shadow: 0 2px 5px 0 rgba(66, 66, 66, 0.1);
+    border-bottom: 1px solid #e4e7ed !important;
+}
+
+.page-tab-container .page-tab .is-active {
+    border-bottom-color: #ecf5ff !important;
+    background-color: #ecf5ff;
+    color: #409EFF;
+}
+
+.page-tab-container .page-tab .el-tabs__nav {
+    border-top: none !important;
+    border-bottom: 1px solid #e4e7ed !important;
+}
+
+.page-tab-container .page-tab .el-tabs__content {
+    width: 100%;
+    height: -webkit-calc(100% - 41px);
+    height: -moz-calc(100% - 41px);
+    height: calc(100% - 41px);
+}
+
+.page-tab-container .page-tab .el-tab-pane {
+    width: 100%;
+    height: 100%;
+}
+
+.page-tab-container .page-tab .page-content {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.page-tab-container .page-tab-tools {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 100;
+}
+
+.page-tab-container .page-tab-tools-btn i {
+    cursor: pointer;
+    line-height: 42px;
+    font-size: 19px;
+    color: #909399;
+}
+
+.page-tab-container .page-tab-tools-btn i:hover {
+    color: #409EFF;
+}
+
+.page-tab-container .page-tab-tools-btn {
+    float: left;
+    margin-left: 21px;
+}
+
+.panel-container {
+    width: 100%;
+    height: 100vh;
+}
+
+.manage-panel {
+    height: 100%;
+}
+
+.manage-panel .manage-panel-content .el-loading-spinner {
+    position: relative;
+    top: 0px;
+    margin-top: 50px;
+}
+
+.manage-panel .manage-panel-toolbar {
+    position: absolute;
+    border-top: solid 1px #ebeef5;
+    width: 100%;
+    bottom: 0px;
+    z-index: 1000;
+    background-color: #FFF;
+    height: 62px;
+}
+
+.manage-panel .manage-panel-toolbar-buttons {
+    position: absolute;
+    top: 15px;
+    left: 17px;
+}
+
+.manage-panel .manage-panel-main {
+    overflow: auto;
+    height: -webkit-calc(100% - 63px);
+    height: -moz-calc(100% - 63px);
+    height: calc(100% - 63px);
+}
+
+.manage-panel .manage-panel-main .manage-panel-content {
+    padding: 26px
+}
+
+.manage-panel .manage-panel-search-panel {
+    background-color: #f2f2f2;
+    padding-top: 18px;
+    margin-top: 26px;
+    margin-left: 26px;
+    margin-right: 26px;
+}
+
+.gridview-panel-table .el-table__empty-block {
+    min-height: 57px;
+}
+
+.gridview-panel-pagination-container {
+    float: right;
+    position: absolute;
+    top: 15px;
+    right: 17px;
+}
+
+.gridview-panel-pagination {
+    float: left;
+    margin-right: 7px;
+}
+
+.gridview-panel-pagination-reload {
+    float: right;
+}
+
+.gridview-panel-pagination-reload span {
+    font-size: 13px;
+}
+
+.gridview-panel-table {
+    overflow: inherit;
+}
+
+.gridview-panel-table .cell {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.gridview-panel-table .el-table__header-wrapper {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.form-panel .form-panel-container {
+    padding: 26px;
+}
+
+.form-panel.hasToolbar {
+    height: 100%;
+    overflow: auto;
+    height: -webkit-calc(100% - 63px);
+    height: -moz-calc(100% - 63px);
+    height: calc(100% - 63px);
+}
+
+.form-panel .el-form-item {
+    margin-bottom: 28px;
+}
+
+.form-panel .el-form-item:last-child {
+    margin-bottom: 16px;
+}
+
+.form-panel .form-panel-main {
+    padding-top: 16px;
+}
+
+.form-panel .form-panel-main .el-textarea__inner, .form-panel .form-panel-main .el-input__inner
+{
+    max-width: 450px;
+}
+
+.form-panel .form-panel-toolbar {
+    border-top: solid 1px #ebeef5;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    z-index: 1000;
+    background-color: #FFF;
+    height: 62px;
+}
+
+.form-panel .form-panel-toolbar-button-group-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.form-panel .form-item-tip {
+    font-size: 12px;
+    color: #909399;
+    margin-top: 4px;
+}
+
+.form-panel .form-item-text {
+    padding: 0px 12px;
+    color: #606266;
+    border-left: 1px solid #dcdfe6;
+    min-height: 32px;
+}
+
+.form-panel .form-item-error {
+    color: #F56C6C;
+}
+
+.form-panel .form-item-img {
+    max-width: 250px;
+    border-radius: 3px;
+}
+
+.system-user-auth-form-panel .form-panel-main {
+    padding: 22px;
+    width: auto;
+    max-width: none;
+}
+
+.base-table {
+    color: #606266;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.base-table td {
+    padding: 15px;
+}
+
+.base-table tr.bg-gray {
+    background-color: #f5f7fa;
+}
+
+.base-table, .base-table tr, .base-table tr td {
+    border: 1px solid #ebeef5;
+}
+
+.upload-preview {
+    overflow: hidden;
+    border-radius: 3px;
+    display: inline-block;
+    line-height: 0px;
+    position: relative;
+}
+
+.upload-box .upload-preview-img {
+    min-width: 100px;
+    max-width: 250px;
+}
+
+.upload-box .upload-preview-shade {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    background-color: rgba(0, 0, 0, .5);
+    color: #FFF;
+    font-size: 20px;
+}
+
+.upload-box .upload-preview-action {
+    width: 62px;
+    height: 20px;
+    position: absolute;
+    left: -webkit-calc(50% - 31px);
+    left: -moz-calc(50% - 31px);
+    left: calc(50% - 31px);
+    top: -webkit-calc(50% - 10px);
+    top: -moz-calc(50% - 10px);
+    top: calc(50% - 10px);
+}
+
+.upload-box .upload-preview-delete {
+    cursor: pointer;
+    float: right;
+}
+
+.upload-box .upload-preview-zoom {
+    cursor: pointer;
+    float: left;
+}
+
+.upload-box .upload-preview-error {
+    color: #F56C6C;
+}
+
+.manage-dialog {
+    width: 60%;
+    min-width: 1000px;
+    margin-top: 11vh !important;
+}
+
+.manage-dialog .el-dialog__body {
+    padding: 0px;
+    height: 65vh;
+}
+
+.manage-dialog .manage-panel .manage-panel-search-panel {
+    margin-top: 12px;
+}
+
+.manage-dialog .manage-panel .manage-panel-main .manage-panel-content {
+    padding-top: 12px;
+}

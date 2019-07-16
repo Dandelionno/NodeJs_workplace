@@ -1,0 +1,14 @@
+
+
+
+# 解决export和import共用了导致不兼容的问题（https://blog.csdn.net/Gochan_Tao/article/details/88526391）
+npm install babel-plugin-transform-es2015-modules-commonjs
+
+
+# 如果有的css需要引用到ttf文件或者woff文件等字体文件（如element-ui），那就需要安装file-loader
+npm i file-loader -D
+并配置
+{
+        test: /\.(eot|svg|ttf|woff|woff2?)$/,
+        loader: 'file-loader'
+}

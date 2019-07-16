@@ -1,2 +1,2 @@
-/electron_test
-/webpack_test
+/electron_test/node_modules
+/webpack_test/node_modules

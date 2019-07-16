@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+</head>
+<body>
+<h1>Hello World!</h1>
+We are using node <script>document.write(tv)</script>,
+Chrome <script>document.write(process.versions.chrome)</script>,
+and Electron <script>document.write(process.versions.electron)</script>.
+
+<div id="holder">
+    Drag your file here
+</div>
+
+<script>
+    document.addEventListener('drop', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        for (const f of e.dataTransfer.files) {
+            console.log('File(s) you dragged here: ', f.path)
+        }
+    });
+    document.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+    });
+</script>
+</body>
+</html>
