@@ -1,7 +1,9 @@
 const Koa = require('koa');
 const Router = require('koa-router');
 const bodyParser = require('koa-bodyparser');
+
 const Util = require(__dirname + '/lib/util');
+const Mysql = require(__dirname + '/lib/mysql');
 
 const app = new Koa();
 const router = new Router({
@@ -28,7 +30,16 @@ app.use(async (ctx, next) => {
 
 /* >>>>>>>>>>>>>>>>>  路由  <<<<<<<<<<<<<<<<<<<<< */
 router.get('/', async ctx => {
-	console.log(ctx.ip);
+	// console.log(ctx.ip);//打印ip
+	Mysql.connect();
+	try{
+		var res = await Mysql.query('select ** from tbl_user');
+		console.log(res);
+	}catch(error){
+		// console.log(error);
+		return Promise.reject("Some error");		
+	}	
+
 	ctx.body = 'Hello World';
 });
 
@@ -43,9 +54,12 @@ app.use(router.routes());
 //一些测试
 (async () => {
 	console.log(new Date());
-	await Util.sleep(2000);
-	console.log(new Date());
+	await Util.sleep(2000).then(function(resolve){
+		console.log(new Date());
+	});	
 })()
+
+
 
 
 //开始监听
