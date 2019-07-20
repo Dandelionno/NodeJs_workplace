@@ -2,10 +2,14 @@
 
 'use strict';
 
+const path = require('path');
+
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
 module.exports = appInfo => {
+  // console.log(appInfo);
+
   /**
    * built-in config
    * @type {Egg.EggAppConfig}
@@ -17,6 +21,23 @@ module.exports = appInfo => {
 
   // add your middleware config here
   config.middleware = [];
+
+  // 模板配置
+  config.view= {
+      root: [
+        path.join(appInfo.baseDir, 'app/view'),
+      ].join(','),
+      mapping: {
+        '.html': 'nunjucks',
+        '.js': 'assets',
+      },
+      defaultExtension: '.html',
+  };
+
+  config.assets = {
+    templatePath: path.join(appInfo.baseDir, 'app/view/template.html'),
+    templateViewEngine: 'nunjucks',
+  },
 
   // add your user config here
   const userConfig = {

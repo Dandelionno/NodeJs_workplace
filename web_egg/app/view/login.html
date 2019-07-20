@@ -1,0 +1,27 @@
+{% extends "layout/main.html" %}
+
+{% block content %}
+<div>
+	<ul class="news-view view">
+		<li v-for="item in list" class="item">
+			<a :href="item.url">{{ item.title }}</a>
+		</li>
+	</ul>
+</div>
+
+<script type="text/javascript">
+	var vue = new Vue({
+		el : '#page',
+		data: function(){
+			console.log( '{{list}}'.replaceAll('&quot;', '"') );
+			var data = {
+				list: {},
+			};
+			return data;
+		},
+		methods: {
+
+		},
+	});
+</script>
+{% endblock %}
