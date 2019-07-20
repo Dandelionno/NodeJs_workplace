@@ -3,9 +3,13 @@
 const BaseController = require(__dirname + '/../core/base_controller');
 
 class HomeController extends BaseController {
-	async render() {
-		await this.ctx.render('index.js');
-	}
+	constrctor() {
+        console.log(1111)
+    }
+
+	// async render() {
+	// 	await this.ctx.render('index.js');
+	// }
 
 	async index() {
 		this.ctx.response.body = 'hi, egg';		

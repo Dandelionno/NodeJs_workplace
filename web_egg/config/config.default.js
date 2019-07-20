@@ -29,15 +29,15 @@ module.exports = appInfo => {
       ].join(','),
       mapping: {
         '.html': 'nunjucks',
-        '.js': 'assets',
+        // '.js': 'assets',
       },
       defaultExtension: '.html',
   };
 
-  config.assets = {
-    templatePath: path.join(appInfo.baseDir, 'app/view/template.html'),
-    templateViewEngine: 'nunjucks',
-  },
+  // config.assets = {
+  //   templatePath: path.join(appInfo.baseDir, 'app/view/template.html'),
+  //   templateViewEngine: 'nunjucks',
+  // };
 
   // add your user config here
   const userConfig = {
