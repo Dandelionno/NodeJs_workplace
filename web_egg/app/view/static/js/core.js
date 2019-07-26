@@ -1,3 +1,4 @@
-String.prototype.replaceAll = function(s1, s2) {
-    return this.replace(new RegExp(s1, "gm"), s2);
+function json_r(json_str) {
+   return json_str.replace(/&quot;/g, '"');
 }
+
