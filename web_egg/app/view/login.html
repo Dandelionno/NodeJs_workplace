@@ -1,27 +1,44 @@
 {% extends "layout/main.html" %}
 
 {% block content %}
-<div>
-	<ul class="news-view view">
-		<li v-for="item in list" class="item">
-			<a :href="item.url">{{ item.title }}</a>
-		</li>
-	</ul>
+<div class="container">
+	<div class="loginForm">
+		<el-form :model="loginForm" class="demo-form-inline">
+			<el-form-item label="用户名">
+				<el-input v-model="loginForm.account" placeholder="用户名"></el-input>
+			</el-form-item>
+			<el-form-item label="密码">
+					<el-input v-model="loginForm.account"></el-input>
+				</el-form-item>
+			<el-form-item>
+				<el-button type="primary" @click="onSubmit">登录</el-button>
+			</el-form-item>
+		</el-form>
+	</div>
 </div>
+{% endblock %}
 
-<script type="text/javascript">
-	var vue = new Vue({
-		el : '#page',
-		data: function(){
-			console.log( json_r('{{ list }}') );
-			var data = {
-				list: {},
-			};
-			return data;
-		},
-		methods: {
 
-		},
+{% block bottom_js %}
+<script type="text/javascript">	
+	core.run_vue({
+		data : function(){
+            var data = {
+				loginForm : {
+					account: 'test',
+					pwd: '123123',
+				}
+            };
+            return data;
+         },
+         methods: {
+            onSubmit: function(){
+				core.axios('/login', {
+					method: 'post',
+					data: this.loginForm
+				});
+			},
+         },
 	});
 </script>
 {% endblock %}

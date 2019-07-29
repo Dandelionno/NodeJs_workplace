@@ -3,17 +3,17 @@
 /** @type Egg.EggPlugin */
 
 module.exports = {
-	validate : {
-		enable: true,
-		package: 'egg-validate',
-	},
-	nunjucks : {
-		enable: true,
-		package: 'egg-view-nunjucks',		 
-	},
-	// assets : {
-	// 	enable: true,
-	// 	package: 'egg-view-assets',
-	// },
-}
+  validate: {
+    enable: true,
+    package: 'egg-validate',
+  },
+  nunjucks: {
+    enable: true,
+    package: 'egg-view-nunjucks',
+  },
+//   assets: {
+//     enable: true,
+//     package: 'egg-view-assets',
+//   },
+};
 

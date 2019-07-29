@@ -23,21 +23,21 @@ module.exports = appInfo => {
   config.middleware = [];
 
   // 模板配置
-  config.view= {
-      root: [
-        path.join(appInfo.baseDir, 'app/view'),
-      ].join(','),
-      mapping: {
-        '.html': 'nunjucks',
-        // '.js': 'assets',
-      },
-      defaultExtension: '.html',
+  config.view = {
+    root: [
+      path.join(appInfo.baseDir, 'app/view'),
+    ].join(','),
+    mapping: {
+      '.html': 'nunjucks',
+    },
+    defaultExtension: '.html',
   };
 
-  // config.assets = {
-  //   templatePath: path.join(appInfo.baseDir, 'app/view/template.html'),
-  //   templateViewEngine: 'nunjucks',
-  // };
+  config.security = {
+    csrf: {
+      headerName: 'x-csrf-token', // 通过 header 传递 CSRF token 的默认字段为 x-csrf-token
+    },
+  };
 
   // add your user config here
   const userConfig = {

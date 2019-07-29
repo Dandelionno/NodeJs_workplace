@@ -1,0 +1,11 @@
+.loginForm{
+    width: 35rem;
+    padding: 2rem;
+    position: fixed;
+    top: 10rem;
+    left: 40rem;
+    z-index: 99;
+    background: #728aa7;
+    border: #ccc 0.1rem solid;
+    border-radius: 1rem;
+}

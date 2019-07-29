@@ -1,7 +1,9 @@
+'use strict';
+
 const Helper = {
-	sleep: (sec) => new Promise ((resolve) => {
-		setTimeout(resolve, sec);
-	}),	
-}
+  sleep: (sec) => new Promise ((resolve) => {
+    setTimeout(resolve, sec);
+  }),
+};
 
 module.exports = Helper;
