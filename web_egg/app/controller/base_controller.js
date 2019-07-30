@@ -3,16 +3,20 @@
 const Controller = require('egg').Controller;
 
 class BaseController extends Controller {
-//   constructor() {
-//     super();
-//     console.log(13222);
-//   }
+  // constructor() {
+  //   super();
+  //   console.log(13222);
+  // }
 
   async upload() {
     const files = this.request.files;
     for (const file in files) {
       console.log(file);
     }
+  }
+
+  async asJson(data) {
+    this.ctx.response.body = data;
   }
 
   async render(filename, params = {}) {

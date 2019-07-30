@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseController = require(__dirname + '/../core/base_controller');
+const BaseController = require(__dirname + '/base_controller');
 
 class HomeController extends BaseController {
 
@@ -11,7 +11,7 @@ class HomeController extends BaseController {
   async login() {
     if (this.ctx.method === 'POST') {
       // try {
-        /* >>>>>>>>>>>>> 校验 <<<<<<<<<<<<<<<<<*/
+      /* >>>>>>>>>>>>> 校验 <<<<<<<<<<<<<<<<<*/
       //   this.ctx.validate({
       //     account: { type: 'string' },
       //     pwd: { type: 'string' },
@@ -19,8 +19,12 @@ class HomeController extends BaseController {
       // } catch (errors) {
       //   console.log(123);
       // }
-      console.log(123);
 
+      const user = await this.ctx.service.user.getUser(1);
+
+      this.asJson({
+        result: true,
+      });
     } else {
       const list = [
         {
@@ -28,6 +32,10 @@ class HomeController extends BaseController {
           url: '#',
         },
       ];
+
+      // this.ctx.service.user.is_transaction = true;
+      const res = await this.ctx.service.user.query('select * from tbl_user');
+      console.log(res[0].username);
 
       await this.render('login', {
         title: 'egg-test',
