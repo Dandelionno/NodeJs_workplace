@@ -10,6 +10,11 @@ class UserService extends BaseService {
     return { user };
   }
 
+  async getUserByCon(conditions) {
+    const result = this.select('user', conditions);
+    return result;
+  }
+
   async create(tbl_name, columns) {
     await this.insert(tbl_name, columns);
   }

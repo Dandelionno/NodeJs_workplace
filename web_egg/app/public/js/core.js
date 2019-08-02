@@ -32,6 +32,13 @@ var core = {
       var complete = function(success,response){
          if(success)
          {
+            if(true === config.autoShowErr){
+               Vue.prototype.$message({
+                  type: "error",
+                  message: response.data.message
+               });
+            }
+
             if(config.success)
             {
                config.success(response);

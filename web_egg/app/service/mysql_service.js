@@ -3,18 +3,22 @@
 const Service = require('egg').Service;
 
 class MysqlService extends Service {
+  constructor(ctx) {
+    super(ctx);
+    this.db = this.app.mysql;
+  }
+
   async insert(tbl_name, columns) {
     tbl_name = await this.table_name(tbl_name);
-    this.app.mysql.insert(tbl_name, columns);
+    this.db.insert(tbl_name, columns);
   }
 
   async update(tbl_name, columns, whereCond) {
     const options = {
       where: whereCond,
     };
-    console.log(options, columns);
     tbl_name = await this.table_name(tbl_name);
-    const result = await this.app.mysql.update(tbl_name, columns, options);
+    const result = await this.db.update(tbl_name, columns, options);
     return result;
   }
 
@@ -30,19 +34,18 @@ class MysqlService extends Service {
     //     offset: 0, 
     // }
 
-    const results = await this.app.mysql.select(tbl_name, options);
+    const results = await this.db.select(tbl_name, options);
     return results;
   }
 
   async delete(tbl_name, where) {
     tbl_name = await this.table_name(tbl_name);
-    const result = await this.app.mysql.delete(tbl_name, where);
+    const result = await this.db.delete(tbl_name, where);
     return result;
   }
 
   async query(sql) {
-    console.log(this.is_transaction);
-    const result = await this.app.mysql.query(sql);
+    const result = await this.db.query(sql);
     return result;
   }
 
@@ -52,8 +55,28 @@ class MysqlService extends Service {
     }
     return tbl_name;
   }
-}
 
-MysqlService.is_transaction = false;
+  // 开始化事务
+  async beginTransaction() {
+    this.db = await this.app.mysql.beginTransaction();
+  }
+
+  // 提交事务
+  async commit() {
+    await this.db.commit();
+    this.db = this.app.mysql;// 提交事务后变回普通模式
+  }
+
+  // 事务回滚
+  async rollback() {
+    await this.db.rollback();
+  }
+
+  // sql表达式（相当于yii里面的Express）
+  literal(express) {
+    const Literal = this.app.mysql.literals.Literal;
+    return new Literal(express);
+  }
+}
 
 module.exports = MysqlService;

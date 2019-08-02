@@ -19,8 +19,11 @@ module.exports = appInfo => {
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1563527486936_8193';
 
-  // add your middleware config here
-  config.middleware = [];
+  // 中间件配置
+  config.middleware = [ 'auth' ];
+  config.auth = {
+    param: 123,
+  };
 
   // 数据库配置
   config.mysql = {
