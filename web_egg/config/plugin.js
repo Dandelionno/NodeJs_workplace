@@ -19,5 +19,9 @@ module.exports = {
 //     enable: true,
 //     package: 'egg-view-assets',
 //   },
+  redis: {
+    enable: true,
+    package: 'egg-redis',
+  },
 };
 

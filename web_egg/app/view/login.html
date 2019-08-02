@@ -10,6 +10,10 @@
 			<el-form-item label="密码">
 				<el-input type="password" v-model="loginForm.pwd"></el-input>
 			</el-form-item>
+			<el-form-item label="验证码">
+				<el-input v-model="loginForm.captcha" placeholder="验证码"></el-input>
+				<span>{{ captcha }}</span>
+			</el-form-item>
 			<el-form-item>
 				<el-button type="primary" @click="onSubmit">登录</el-button>
 			</el-form-item>
@@ -25,8 +29,9 @@
 		data : function(){
             var data = {
 				loginForm : {
-					username: 'egg2',
+					username: 'egg',
 					pwd: '123123',
+					captcha: '1234',
 				}
             };
             return data;

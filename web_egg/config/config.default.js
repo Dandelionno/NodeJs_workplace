@@ -20,7 +20,7 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1563527486936_8193';
 
   // 中间件配置
-  config.middleware = [ 'auth' ];
+  config.middleware = [ 'notfoundHandler', 'auth' ];
   config.auth = {
     param: 123,
   };
@@ -38,7 +38,7 @@ module.exports = appInfo => {
       // 密码
       password: 'root',
       // 数据库名
-      database: 'test',
+      database: 'egg',
       // 表名前缀
       tbl_prefix: 'tbl_',
     },
@@ -46,6 +46,16 @@ module.exports = appInfo => {
     app: true,
     // 是否加载到 agent 上，默认关闭
     agent: false,
+  };
+
+  // redis配置
+  config.redis = {
+    client: {
+      port: 6379, // Redis port
+      host: '127.0.0.1', // Redis host
+      password: 'auth',
+      db: 0,
+    },
   };
 
   // 模板配置
@@ -59,10 +69,24 @@ module.exports = appInfo => {
     defaultExtension: '.html',
   };
 
+  // 404 指向页面
+  config.notfound = {
+    pageUrl: '/404',
+  };
+
   config.security = {
     csrf: {
       headerName: 'x-csrf-token', // 通过 header 传递 CSRF token 的默认字段为 x-csrf-token
     },
+  };
+
+  // session 设置
+  config.session = {
+    key: 'EGG_SESS',
+    maxAge: 24 * 3600 * 1000, // 1天
+    httpOnly: true,
+    encrypt: true,
+    // renew: true, // 延长会话有效期
   };
 
   // add your user config here

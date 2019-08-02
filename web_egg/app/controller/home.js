@@ -3,10 +3,6 @@
 const BaseController = require(__dirname + '/base_controller');
 
 class HomeController extends BaseController {
-  constructor(ctx) {
-    super(ctx);
-    this.userService = this.ctx.service.user;
-  }
 
   async index() {
     this.ctx.response.body = 'hi, egg';
@@ -24,18 +20,11 @@ class HomeController extends BaseController {
       //   console.log(123);
       // }
 
-      const user = await this.userService.getUserByCon({
-        where: {
-          username: this._post.username,
-        },
-      });
-      if (user.length <= 0) {
-        this.asResult(false, '用户不存在');
-        return;
-      }
-      console.log(this.ctx.helper.md5('123123'));
-      if (user[0].password !== this.ctx.helper.md5(this._post.pwd)) {
-        this.asResult(false, '密码错误');
+      // 登录
+      try {
+        await this.ser('user').login(this.ctx._post);
+      } catch (error) {
+        this.asResult(false, error.message);
         return;
       }
 
@@ -51,9 +40,15 @@ class HomeController extends BaseController {
         },
       ];
 
+      // 生成验证码
+      const captcha = this.ctx.helper.createCaptcha();
+      const cacheKey = await this.ser('utils.redis').getCacheKey('captcha');
+      await this.ser('utils.redis').set(cacheKey, captcha, 10 * 60);
+
       await this.render('login', {
         title: 'egg-test',
         list: JSON.stringify(list),
+        captcha: `${captcha}`,
       });
     }
   }
