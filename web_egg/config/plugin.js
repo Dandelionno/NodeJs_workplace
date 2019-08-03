@@ -15,13 +15,25 @@ module.exports = {
     enable: true,
     package: 'egg-mysql',
   },
-//   assets: {
-//     enable: true,
-//     package: 'egg-view-assets',
-//   },
+  // assets: {
+  //   enable: true,
+  //   package: 'egg-view-assets',
+  // },
   redis: {
     enable: true,
     package: 'egg-redis',
+  },
+  io: {
+    enable: true,
+    package: 'egg-socket.io',
+  },
+  passport: {
+    enable: true,
+    package: 'egg-passport',
+  },
+  passportGithub: {
+    enable: true,
+    package: 'egg-passport-github',
   },
 };
 

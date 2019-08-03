@@ -89,6 +89,35 @@ module.exports = appInfo => {
     // renew: true, // 延长会话有效期
   };
 
+  // github鉴权
+  config.passportGithub = {
+    key: '280789a8694ae69d1e06',
+    secret: '4ef6bc12572a85277c3e3dd77219799c3240b552',
+    callbackURL: '/passport/github/callback',
+    // proxy: false,
+  };
+
+
+  // config.io = {
+  //   init: { }, // passed to engine.io
+  //   namespace: {
+  //     '/': {
+  //       connectionMiddleware: [],
+  //       packetMiddleware: [],
+  //     },
+  //     '/example': {
+  //       connectionMiddleware: [],
+  //       packetMiddleware: [],
+  //     },
+  //   },
+  //   redis: {
+  //     host: '127.0.0.1',
+  //     port: 6379,
+  //     auth_pass: 'auth',
+  //     db: 0,
+  //   },
+  // };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',

@@ -9,8 +9,11 @@
   "dependencies": {
     "egg": "^2.15.1",
     "egg-mysql": "^3.0.0",
+    "egg-passport": "^2.1.0",
+    "egg-passport-github": "^1.0.0",
     "egg-redis": "^2.4.0",
     "egg-scripts": "^2.11.0",
+    "egg-socket.io": "^4.1.6",
     "egg-validate": "^2.0.2",
     "egg-view-assets": "^1.5.0",
     "egg-view-nunjucks": "^2.2.0"
